@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6be8f52e62f546a203eddd900bb4b, type: 3}
+  m_Name: Tomato Up Recipe Action
+  m_EditorClassIdentifier: 
+  m_actionData:
+    m_actionName: Tomato Up
+    m_conditions: []
+    m_effects:
+    - effect: 0
+      value:
+        m_key: 3
+        m_valueType: 1
+        m_floatValue: 0
+        m_intValue: 1
+        m_boolValue: 0
+        m_stringValue: 
+        m_objectValue: {fileID: 0}
+        m_hasCustomEnum: 0
+    - effect: 0
+      value:
+        m_key: 5
+        m_valueType: 1
+        m_floatValue: 0
+        m_intValue: 1
+        m_boolValue: 0
+        m_stringValue: 
+        m_objectValue: {fileID: 0}
+        m_hasCustomEnum: 0
+  m_goalName: Tomato Up

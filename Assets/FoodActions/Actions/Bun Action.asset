@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f614e4a21a3f749a3e0aef659fa5e2, type: 3}
+  m_Name: Bun Action
+  m_EditorClassIdentifier: 
+  m_actionName: Pick Up Bun
+  m_conditions:
+  - check: 2
+    value:
+      m_key: 0
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 0
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+  m_effects:
+  - effect: 2
+    value:
+      m_key: 0
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 1
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+  m_beginRange: 1.5
+  m_beginRangeError: 0.01
+  m_completeTime: 1
+  m_effectTime: 0.5
+  m_beginAnimID: Pick_up
+  m_completeAnimID: Clap

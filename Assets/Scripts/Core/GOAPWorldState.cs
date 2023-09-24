@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 
 namespace BBB.GOAP
@@ -10,6 +9,21 @@ namespace BBB.GOAP
         // whenever a GOAPValue is added to a world state by the user. It will also add a default value that can be easily accessed if only looking for a key.
         // This will help convert strings into keys to be ables to index into the hashset.
         static Dictionary<int, GOAPValue> _allKeyDefaults;
+
+        public int Count { get { return m_values.Count; } }
+        public int[] Keys
+        {
+            get
+            {
+                var keys = new int[Count];
+                int i = 0;
+                foreach (var value in m_values)
+                {
+                    keys[i++] = value.key.id;
+                }
+                return keys;
+            }
+        }
 
         public GOAPWorldState()
         {

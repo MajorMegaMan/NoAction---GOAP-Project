@@ -4,14 +4,19 @@ using System.Linq;
 namespace BBB.GOAP
 {
     // Temp class used for planning.
-    class GOAPPlanningWorldState<TAction> where TAction : IGOAPAction
+    public class GOAPPlanningWorldState<TAction> where TAction : IGOAPAction
     {
         GOAPWorldState m_worldState = new GOAPWorldState();
 
-        public GOAPPlanningWorldState<TAction> parent = null;
-        public TAction action = default;
-        public int depth = 0;
-        public float weight = 0;
+        private GOAPPlanningWorldState<TAction> m_parent = null;
+        private TAction m_action = default;
+        private int m_depth = 0;
+        private float m_weight = 0;
+
+        public GOAPPlanningWorldState<TAction> parent { get { return m_parent; } }
+        public TAction action { get { return m_action; } }
+        public int depth { get { return m_depth; } }
+        public float weight { get { return m_weight; } }
 
         public GOAPWorldState worldState { get { return m_worldState; } }
 
@@ -38,10 +43,10 @@ namespace BBB.GOAP
         {
             // initialise ready for use.
             planningState.Clear();
-            planningState.parent = null;
-            planningState.action = default;
-            planningState.depth = 0;
-            planningState.weight = 0;
+            planningState.m_parent = null;
+            planningState.m_action = default;
+            planningState.m_depth = 0;
+            planningState.m_weight = 0;
 
             _activePlannerStates.Add(planningState, planningState);
         }
@@ -179,10 +184,10 @@ namespace BBB.GOAP
             actionedWorldState = ActivateNextPlanningState();
             actionedWorldState.AddCopyValues(m_worldState);
 
-            actionedWorldState.parent = this;
-            actionedWorldState.action = action;
-            actionedWorldState.depth = depth + 1;
-            actionedWorldState.weight = weight + action.GetWeight();
+            actionedWorldState.m_parent = this;
+            actionedWorldState.m_action = action;
+            actionedWorldState.m_depth = m_depth + 1;
+            actionedWorldState.m_weight = m_weight + action.GetWeight();
 
             action.AddEffects(actionedWorldState.m_worldState);
 

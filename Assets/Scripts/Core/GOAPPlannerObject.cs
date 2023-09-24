@@ -13,6 +13,11 @@ namespace BBB.GOAP
         Queue<GOAPPlanningWorldState<TAction>> m_statesToSearch = new Queue<GOAPPlanningWorldState<TAction>>();
         List<GOAPPlanningWorldState<TAction>> m_activatedSeachStates = new List<GOAPPlanningWorldState<TAction>>();
 
+        public int searchStateCount { get { return m_statesToSearch.Count; } }
+        public GOAPPlanningWorldState<TAction> topSearchState { get { return m_statesToSearch.Peek(); } }
+        public GOAPPlanningWorldState<TAction>[] goals { get { return m_goalStates.ToArray(); } }
+        public bool foundGoal { get { return m_currentGoal != null; } }
+
         public Queue<TAction> GetActionPlan(GOAPWorldState currentWorldState, IGOAPGoal goal, ICollection<TAction> actions, int depthLimit = 10)
         {
             Begin(currentWorldState);
@@ -58,7 +63,7 @@ namespace BBB.GOAP
         }
 
         // Sets up variables for the planner to begin.
-        void Begin(GOAPWorldState currentWorldState)
+        public void Begin(GOAPWorldState currentWorldState)
         {
             m_goalStates.Clear();
             m_statesToSearch.Clear();
@@ -73,7 +78,7 @@ namespace BBB.GOAP
         }
 
         // called during each planning step.
-        void Step(IGOAPGoal goal, ICollection<TAction> actions, int depthLimit)
+        public void Step(IGOAPGoal goal, ICollection<TAction> actions, int depthLimit)
         {
             var currentPlanningState = m_statesToSearch.Dequeue();
             ProcessPlanningState(currentPlanningState, goal, actions, depthLimit);
@@ -102,6 +107,11 @@ namespace BBB.GOAP
             Stack<TAction> actionPlanStack = new Stack<TAction>();
             ExtractActionPlanToStack(actionPlanStack);            
             return actionPlanStack;
+        }
+
+        public void End()
+        {
+            DeactivateSearchStates();
         }
 
         void DeactivateSearchStates()

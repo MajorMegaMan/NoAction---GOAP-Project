@@ -17,7 +17,7 @@ MonoBehaviour:
     m_conditions:
     - check: 0
       value:
-        m_key: 4
+        m_key: 1
         m_valueType: 1
         m_floatValue: 0
         m_intValue: 0

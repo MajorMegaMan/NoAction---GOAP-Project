@@ -62,7 +62,14 @@ public class ChefAgentManager : MonoBehaviour
             count *= m_averageActionCount;
         }
 
-        GOAPPlanner<RecipePlateAction>.ExpandPlanningPool(plateWorldState, count);
+        // Allocate space for recipe actions to plan. Then print a message of how many allocated states there are and how long it took to allocate.
+        float time = Time.realtimeSinceStartup;
+        int recipeAloocationCount = m_plateStatePrefab.recipe.AllocatePlanningStates();
+        time = Time.realtimeSinceStartup - time;
+        string msg = "Count: " + recipeAloocationCount;
+        msg += " -- Time: " + time;
+        Debug.Log(msg);
+
         GOAPPlanner<IGOAPAction>.ExpandPlanningPool(m_agentPrefab.GetCombinedGlobalWorldState(plateWorldState), count);
     }
 

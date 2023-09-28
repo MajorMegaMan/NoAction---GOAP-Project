@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,16 +11,17 @@ public class EatingPosition : ChefActionTarget
     [SerializeField] Vector3 m_foodPosition = Vector3.zero;
     [SerializeField] Vector3 m_foodRotation = Vector3.zero;
 
-    [SerializeField] Vector3 m_drawSize = Vector3.one;
-    [SerializeField] Color m_originColour = Color.blue;
-    [SerializeField] Color m_sitLocationColour = Color.blue;
-    [SerializeField] Color m_foodColour = Color.yellow;
-
     public Vector3 sitPosition { get { return transform.TransformPoint(m_sitPosition); } }
     public Quaternion sitRotation { get { return transform.rotation * Quaternion.Euler(m_sitRotation); } }
+    public Vector3 localSitEuler { get { return m_sitRotation; } }
+    public Vector3 localSitPosition { get { return m_sitPosition; } }
+    public Quaternion localSitRotation { get { return Quaternion.Euler(m_sitRotation); } }
 
     public Vector3 foodPosition { get { return transform.TransformPoint(m_foodPosition); } }
     public Quaternion foodRotation { get { return transform.rotation * Quaternion.Euler(m_foodRotation); } }
+    public Vector3 localFoodEuler { get { return m_foodRotation; } }
+    public Vector3 localFoodPosition { get { return m_foodPosition; } }
+    public Quaternion localFoodRotation { get { return Quaternion.Euler(m_foodRotation); } }
 
     [SerializeField] UnityEvent<EatingPosition> m_deliverEvent;
     [SerializeField] UnityEvent<EatingPosition> m_pickUpEvent;
@@ -65,27 +65,5 @@ public class EatingPosition : ChefActionTarget
         }
 
         m_pickUpEvent.Invoke(this);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.matrix = transform.localToWorldMatrix;
-
-        Gizmos.color = m_originColour;
-        Utility.DrawColourCube(Vector3.zero, Vector3.one);
-        Handles.ArrowHandleCap(0, transform.position, transform.rotation, 1.0f, EventType.Repaint);
-
-        Matrix4x4 matrix = Matrix4x4.TRS(m_foodPosition, Quaternion.Euler(m_foodRotation), m_drawSize);
-        Gizmos.matrix *= matrix;
-
-        Gizmos.color = m_foodColour;
-        Utility.DrawColourCube(Vector3.zero, Vector3.one);
-        Handles.ArrowHandleCap(0, foodPosition, foodRotation, 1.0f, EventType.Repaint);
-
-        Gizmos.color = m_sitLocationColour;
-        matrix = Matrix4x4.TRS(m_sitPosition, Quaternion.Euler(m_sitRotation), m_drawSize);
-        Gizmos.matrix = transform.localToWorldMatrix * matrix;
-        Utility.DrawColourCube(Vector3.zero, Vector3.one);
-        Handles.ArrowHandleCap(0, sitPosition, sitRotation, 1.0f, EventType.Repaint);
     }
 }

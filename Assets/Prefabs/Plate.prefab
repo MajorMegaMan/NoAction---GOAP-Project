@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413161281795032319
 Transform:
   m_ObjectHideFlags: 0
@@ -97,6 +97,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6299adf5ffc4d9489b372fdb117e9dc, type: 2}
   - {fileID: 11400000, guid: 97f402d833c03a24caa53138da28558e, type: 2}
   - {fileID: 11400000, guid: edd0887ba8c83c54abd1ba270bd39e28, type: 2}
+  m_maxDepth: 20
+  m_averageActionCount: 4
+  m_averageDepthCount: 7
   m_goalName: Match Recipe
 --- !u!1 &5284015614639304554
 GameObject:
@@ -115,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6086713458225312721
 Transform:
   m_ObjectHideFlags: 0
@@ -196,6 +199,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6299adf5ffc4d9489b372fdb117e9dc, type: 2}
   - {fileID: 11400000, guid: 97f402d833c03a24caa53138da28558e, type: 2}
   - {fileID: 11400000, guid: edd0887ba8c83c54abd1ba270bd39e28, type: 2}
+  m_maxDepth: 20
+  m_averageActionCount: 4
+  m_averageDepthCount: 7
   m_goalName: Goal
 --- !u!114 &7323948769342260868
 MonoBehaviour:
@@ -684,7 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_actionEffects: []
   tablePosition: {fileID: 0}
-  m_recipe: {fileID: 6848125357298060155}
+  m_recipe: {fileID: 6513146513495963175}
   m_plateState:
     m_hasCustomEnum: 0
     m_goapValueList:

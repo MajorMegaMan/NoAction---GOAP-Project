@@ -13,12 +13,15 @@ public class PlanningExplorerWindowSettings : ScriptableSingleton<PlanningExplor
     [SerializeField] Color m_stateViewColour = new Color(0.2f, 0.2f, 0.2f);
     [SerializeField] Color m_treeBranchAreaColour = new Color(0.5f, 0.5f, 0.5f);
 
+    [SerializeField] Color m_pruneColour = Color.magenta;
+
     public Color goalColour { get { return m_goalColour; } }
     public Color focusedColour { get { return m_focusedColour; } }
     public Color focusedParentColour { get { return m_focusedParentColour; } }
 
     public Color stateViewColour { get { return m_stateViewColour; } }
     public Color treeBranchAreaColour { get { return m_treeBranchAreaColour; } }
+    public Color pruneColour { get { return m_pruneColour; } }
 
     public void DrawGUI(Rect position)
     {

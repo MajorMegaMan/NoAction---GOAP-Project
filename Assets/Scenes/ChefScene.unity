@@ -315,10 +315,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: -1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -800,10 +796,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 0.95}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1291,10 +1283,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1853,10 +1841,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 2, z: -1}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2347,10 +2331,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2775,10 +2755,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2904,10 +2880,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: -1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3601,10 +3573,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 1.79}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4176,10 +4144,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5760,10 +5724,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6587,10 +6547,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7059,6 +7015,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6299adf5ffc4d9489b372fdb117e9dc, type: 2}
   - {fileID: 11400000, guid: 97f402d833c03a24caa53138da28558e, type: 2}
   - {fileID: 11400000, guid: edd0887ba8c83c54abd1ba270bd39e28, type: 2}
+  m_maxDepth: 10
+  m_averageActionCount: 4
+  m_averageDepthCount: 5
   m_goalName: Goal
 --- !u!1 &793570690
 GameObject:
@@ -7430,10 +7389,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 2, z: -1}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -8739,10 +8694,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9631,10 +9582,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10020,10 +9967,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 0.95}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10862,10 +10805,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11957,10 +11896,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 1.79}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -12133,10 +12068,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13303,10 +13234,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 0.95}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -13430,10 +13357,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14491,10 +14414,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15000,10 +14919,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15074,10 +14989,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 0, z: 0}
   m_foodPosition: {x: 0, y: 1.5, z: 1.79}
   m_foodRotation: {x: 0, y: 0, z: 0}
-  m_drawSize: {x: 1.25, y: 0.13, z: 0.81}
-  m_originColour: {r: 1, g: 0, b: 0.9614239, a: 1}
-  m_sitLocationColour: {r: 0, g: 0, b: 0, a: 0}
-  m_foodColour: {r: 0, g: 1, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -15268,10 +15179,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16401,6 +16308,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6299adf5ffc4d9489b372fdb117e9dc, type: 2}
   - {fileID: 11400000, guid: 97f402d833c03a24caa53138da28558e, type: 2}
   - {fileID: 11400000, guid: edd0887ba8c83c54abd1ba270bd39e28, type: 2}
+  m_maxDepth: 10
+  m_averageActionCount: 4
+  m_averageDepthCount: 5
   m_goalName: Goal
 --- !u!4 &1900865700
 Transform:
@@ -16612,10 +16522,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16983,10 +16889,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17594,10 +17496,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: 90, z: 0}
   m_foodPosition: {x: -0.4, y: 1.5, z: 1.5}
   m_foodRotation: {x: 0, y: -90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17683,10 +17581,6 @@ MonoBehaviour:
   m_sitRotation: {x: 0, y: -90, z: 0}
   m_foodPosition: {x: 0.4, y: 1.5, z: 3}
   m_foodRotation: {x: 0, y: 90, z: 0}
-  m_drawSize: {x: 1, y: 1, z: 1}
-  m_originColour: {r: 0, g: 0, b: 1, a: 1}
-  m_sitLocationColour: {r: 0, g: 1, b: 1, a: 1}
-  m_foodColour: {r: 1, g: 0, b: 0, a: 1}
   m_deliverEvent:
     m_PersistentCalls:
       m_Calls: []

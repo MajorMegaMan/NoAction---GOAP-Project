@@ -27,4 +27,12 @@ public class DebugRandomiseRecipe : MonoBehaviour
         m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_TomatoCount, Random.Range(0, m_tomatoMax));
         m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BeefCount, Random.Range(0, m_beefMax));
     }
+
+    public static void RandomiseRecipe(BBB.GOAP.GOAPWorldState recipe, int maxCounts)
+    {
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BunCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_LettuceCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_TomatoCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BeefCount, Random.Range(0, maxCounts));
+    }
 }

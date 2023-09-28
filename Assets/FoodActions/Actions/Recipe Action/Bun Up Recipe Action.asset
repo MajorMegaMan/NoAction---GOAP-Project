@@ -14,7 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_actionData:
     m_actionName: Bun Up
-    m_conditions: []
+    m_conditions:
+    - check: 1
+      value:
+        m_key: 1
+        m_valueType: 1
+        m_floatValue: 0
+        m_intValue: 3
+        m_boolValue: 0
+        m_stringValue: 
+        m_objectValue: {fileID: 0}
+        m_hasCustomEnum: 0
     m_effects:
     - effect: 0
       value:

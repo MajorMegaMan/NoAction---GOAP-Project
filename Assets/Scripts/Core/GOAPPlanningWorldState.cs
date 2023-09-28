@@ -13,6 +13,8 @@ namespace BBB.GOAP
         private int m_depth = 0;
         private float m_weight = 0;
 
+        public GOAPPlanningWorldState<TAction> twinState = null;
+
         public GOAPPlanningWorldState<TAction> parent { get { return m_parent; } }
         public TAction action { get { return m_action; } }
         public int depth { get { return m_depth; } }
@@ -172,6 +174,7 @@ namespace BBB.GOAP
 
         }
 
+        // Does not activate a planning state if false.
         public bool ProcessActionedWorldState(TAction action, out GOAPPlanningWorldState<TAction> actionedWorldState)
         {
             if (!action.CheckCondition(m_worldState))
@@ -182,13 +185,75 @@ namespace BBB.GOAP
             }
 
             actionedWorldState = ActivateNextPlanningState();
-            actionedWorldState.AddCopyValues(m_worldState);
 
             actionedWorldState.m_parent = this;
             actionedWorldState.m_action = action;
             actionedWorldState.m_depth = m_depth + 1;
             actionedWorldState.m_weight = m_weight + action.GetWeight();
 
+            actionedWorldState.AddCopyValues(m_worldState);
+            action.AddEffects(actionedWorldState.m_worldState);
+
+            return true;
+        }
+
+        public enum ActionCheck
+        {
+            Success,
+            Pruned,
+            BadCondition
+        }
+
+        // Checks for pruning before condition checks/adding effects.
+        // Always activates a planning State.
+        public ActionCheck ProcessActionedWorldStateWithPruning(TAction action, out GOAPPlanningWorldState<TAction> actionedWorldState, Dictionary<GOAPPlanningWorldState<TAction>, GOAPPlanningWorldState<TAction>> uniqueStates)
+        {
+            PrepareActionForPruning(action, out actionedWorldState);
+            if(uniqueStates.ContainsKey(actionedWorldState))
+            {
+                return ActionCheck.Pruned;
+            }
+            else
+            {
+                if(ProcessActionInPlanningState(action, actionedWorldState))
+                {
+                    uniqueStates.Add(actionedWorldState, actionedWorldState);
+                    return ActionCheck.Success;
+                }
+                else
+                {
+                    return ActionCheck.BadCondition;
+                }
+            }
+        }
+
+        // always activates a planning state.
+        void PrepareActionForPruning(TAction action, out GOAPPlanningWorldState<TAction> actionedWorldState)
+        {
+            // activate a planning state from the pool
+            actionedWorldState = ActivateNextPlanningState();
+
+            // Set variables for prune testing.
+            actionedWorldState.m_parent = this;
+            actionedWorldState.m_action = action;
+            actionedWorldState.m_depth = m_depth + 1;
+            actionedWorldState.m_weight = m_weight + action.GetWeight();
+        }
+
+        bool ProcessActionInPlanningState(TAction action, GOAPPlanningWorldState<TAction> actionedWorldState)
+        {
+            // Check if the action can/should be performed.
+            if (!action.CheckCondition(m_worldState))
+            {
+                // Action can not be performed.
+                actionedWorldState = null;
+                return false;
+            }
+
+            // Ensure the actioned world state contains variables.
+            actionedWorldState.AddCopyValues(m_worldState);
+
+            // Add Effects
             action.AddEffects(actionedWorldState.m_worldState);
 
             return true;

@@ -108,7 +108,7 @@ namespace BBB.GOAP
         // Expands the pool to target size.
         public static void ExpandPlanningPool(GOAPWorldState worldState, int count)
         {
-            GOAPPlanningWorldState<TAction>.ExpandPlanningPool(worldState, count);
+            _plannerObject.ExpandPlanningPool(worldState, count);
         }
     }
 }

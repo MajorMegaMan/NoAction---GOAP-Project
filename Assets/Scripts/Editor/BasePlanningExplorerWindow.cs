@@ -20,6 +20,8 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
 
     int m_depthLimit = 5;
 
+    int m_searchAllocation = 65536;
+
     PlanningStateReadValues m_top = null;
     PlanningStateReadValues m_focused = null;
     Dictionary<GOAPPlanningWorldState<TAction>, PlanningStateReadValues> m_foldouts;
@@ -53,6 +55,10 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         currentPosition.y += EditorGUIUtility.singleLineHeight;
 
         m_depthLimit = EditorGUI.IntField(currentPosition, "Depth Limit", m_depthLimit);
+
+        currentPosition.y += EditorGUIUtility.singleLineHeight;
+
+        m_searchAllocation = EditorGUI.IntField(currentPosition, "Search Allocation", m_searchAllocation);
 
         currentPosition.y += EditorGUIUtility.singleLineHeight;
 
@@ -113,6 +119,15 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         }
 
         currentPosition.y += EditorGUIUtility.singleLineHeight;
+
+        if (GUI.Button(currentPosition, "Allocate"))
+        {
+            AllocateSearchSpace(m_searchAllocation);
+            //int thing = 9;
+        }
+
+        currentPosition.y += EditorGUIUtility.singleLineHeight;
+
         if (GUI.Button(currentPosition, "Clear"))
         {
             StopSearching();
@@ -355,6 +370,11 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
     #endregion // WorldStateMethods
 
     #region SearchMethods
+    void AllocateSearchSpace(int count)
+    {
+        m_plannerObject.ExpandPlanningPool(m_windowWorldState, count);
+    }
+
     void StartSearching()
     {
         if (m_goal == null)
@@ -379,10 +399,6 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
             m_focused = m_top;
             FocusParentTree(m_top, true);
 
-            string msg = "Starting.";
-            msg += m_plannerObject.searchStateCount;
-            Debug.LogWarning(msg);
-
             m_averageSeacrhCount = 0;
             m_averageSearchQueue.Clear();
             for(int i = 0; i < 10; i++)
@@ -397,18 +413,17 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
     void FoundGoal()
     {
         var goals = m_plannerObject.goals;
-        //foreach(var state in goals)
-        //{
-        //    if(m_foldouts.TryGetValue(state, out var goalState))
-        //    {
-        //        SetParentTreeColour(goalState, Color.red);
-        //    }
-        //}
-
-        var first = goals[0];
-        if (m_foldouts.TryGetValue(first, out var goalState))
+        if(goals.Length > 0)
         {
-            GoalParentTree(goalState, true);
+            var first = goals[0];
+            if (m_foldouts.TryGetValue(first, out var goalState))
+            {
+                GoalParentTree(goalState, true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Goal was not found. Depth may be too shallow or no path of actions could be found to reach the target worldstate.");
         }
 
         StopSearching();
@@ -416,7 +431,6 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
 
     void StopSearching()
     {
-        Debug.LogWarning("Stopping.");
         m_isSearching = false;
         m_plannerObject.End();
         m_isInitialised = false;
@@ -432,7 +446,7 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
     {
         if (m_isSearching && !m_stepping)
         {
-            Debug.LogWarning("Searching...");
+            Debug.Log("Searching...");
             for(int i = 0; i < m_stepPerFrame && m_plannerObject.searchStateCount > 0; i++)
             {
                 Step();
@@ -571,24 +585,17 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         var current = planningState;
 
         current.isFocusState = isFocused;
+        current.SetLeafColour();
         if (planningState.isFocusState)
         {
             planningState.drawColour = PlanningExplorerWindowSettings.instance.focusedColour;
-        }
-        else if (planningState.isGoalState)
-        {
-            planningState.drawColour = PlanningExplorerWindowSettings.instance.goalColour;
-        }
-        else
-        {
-            planningState.drawColour = Color.white;
         }
         current = current.parent;
 
         while (current != null)
         {
             current.isFocusState = isFocused;
-            SetLeafColour(current);
+            current.SetLeafColour();
             current = current.parent;
         }
     }
@@ -599,24 +606,8 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         while (current != null)
         {
             current.isGoalState = isGoal;
-            SetLeafColour(current);
+            current.SetLeafColour();
             current = current.parent;
-        }
-    }
-
-    void SetLeafColour(PlanningStateReadValues planningState)
-    {
-        if (planningState.isFocusState)
-        {
-            planningState.drawColour = PlanningExplorerWindowSettings.instance.focusedParentColour;
-        }
-        else if (planningState.isGoalState)
-        {
-            planningState.drawColour = PlanningExplorerWindowSettings.instance.goalColour;
-        }
-        else
-        {
-            planningState.drawColour = Color.white;
         }
     }
 
@@ -625,10 +616,12 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         int currentSearchCount = m_plannerObject.searchStateCount;
         int currentProcessedStates = m_foldouts.Count;
 
-        string msg = "Search Count -- ";
+        string msg = "Search Count : ";
 
         msg += currentSearchCount + " / " + currentProcessedStates;
-        msg += "-- Average Search -- " + m_averageSeacrhCount;
+        msg += "-- Average Search : " + m_averageSeacrhCount;
+
+        msg += " -- Pruned Count : " + m_plannerObject.prunedCount;
 
         EditorGUI.LabelField(position, msg);
     }
@@ -650,6 +643,8 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
         public Color drawColour = Color.white;
 
         public GOAPWorldState worldState { get { return planningState.worldState; } }
+        public bool isPruned { get { return planningState.twinState != null; } }
+
         public string planName
         {
             get
@@ -687,6 +682,8 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
             {
                 unsearchedActions.Add(action);
             }
+
+            SetLeafColour();
         }
 
         public bool DoFoldoutButton(Rect position, string msg, GUIStyle style)
@@ -732,6 +729,26 @@ public abstract class BasePlanningExplorerWindow<TAction> : EditorWindow where T
             }
 
             return height;
+        }
+
+        public void SetLeafColour()
+        {
+            if (isFocusState)
+            {
+                drawColour = PlanningExplorerWindowSettings.instance.focusedParentColour;
+            }
+            else if (isGoalState)
+            {
+                drawColour = PlanningExplorerWindowSettings.instance.goalColour;
+            }
+            else if (isPruned)
+            {
+                drawColour = PlanningExplorerWindowSettings.instance.pruneColour;
+            }
+            else
+            {
+                drawColour = Color.white;
+            }
         }
     }
 

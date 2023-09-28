@@ -17,6 +17,8 @@ public class PlateState : ChefActionTarget
 
     HashSet<IGOAPAction> m_deliveryActions;
 
+    public ChefRecipe recipe { get { return m_recipe; } }
+
     public DeliverItemAction deliverAction { get { return m_plateDeliverAction; } }
     public EatingPosition deliveryLocation { get { return m_plateDeliverAction.deliveryLocation; } }
 

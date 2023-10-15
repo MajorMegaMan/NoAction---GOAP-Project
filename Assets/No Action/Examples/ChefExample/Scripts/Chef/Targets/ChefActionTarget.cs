@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
 {
+    [SerializeField] UnityEvent<IGOAPAgentElements> m_onPerformActionEvent;
     [SerializeField] List<ActionEffectPair> m_actionEffects;
     Dictionary<IGOAPAgentActionMethods, UnityEvent<IGOAPAgentElements>> m_actionEffectDictionary;
 
@@ -51,6 +52,8 @@ public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
 
     public void PerfromActionOnTarget(IGOAPAgentElements agent, IGOAPAgentActionMethods action)
     {
+        m_onPerformActionEvent.Invoke(agent);
+
         var agentAction = action as AgentAction<ChefWorldStateEnum>;
         if (agentAction == null)
         {

@@ -23,6 +23,7 @@ public class CustomerAgent : MonoBehaviour
     StateMachine<CustomerAgent> m_walkStateMachine;
 
     [SerializeField] float m_eatSpeed = 1.0f;
+    [SerializeField] UnityEvent<CustomerAgent> m_beginEatingEvent;
     [SerializeField] UnityEvent<CustomerAgent> m_finishEatingEvent;
     [SerializeField] UnityEvent<CustomerAgent> m_leaveEvent;
 
@@ -621,11 +622,13 @@ public class CustomerAgent : MonoBehaviour
             //agent.m_sitMachine.Sit();
             agent.m_eatAnimStateID.CrossFade(agent.m_anim);
             m_time = 0.0f;
+            agent.m_beginEatingEvent.Invoke(agent);
         }
 
         void IState<CustomerAgent>.Exit(CustomerAgent agent)
         {
             //agent.m_sitMachine.Stand();
+            agent.m_finishEatingEvent.Invoke(agent);
         }
 
         void IState<CustomerAgent>.Invoke(CustomerAgent agent)
@@ -634,9 +637,9 @@ public class CustomerAgent : MonoBehaviour
             agent.debug_float = m_time;
             if (m_time > 1.0f)
             {
-                //agent.BehaviourDoNothing();
+                agent.BehaviourDoNothing();
                 agent.lastEatPosition.hasAssignedAgent = false;
-                agent.m_finishEatingEvent.Invoke(agent);
+                //agent.m_finishEatingEvent.Invoke(agent);
             }
         }
     }

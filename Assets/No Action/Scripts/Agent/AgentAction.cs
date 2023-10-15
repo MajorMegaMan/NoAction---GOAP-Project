@@ -20,8 +20,6 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
     public string beginAnimID { get { return m_agentData.beginAnimID; } }
     public string completeAnimID { get { return m_agentData.completeAnimID; } }
 
-    static Dictionary<AgentAction<TKey>, List<IGOAPActionTarget>> _regisiteredActionTargets = new Dictionary<AgentAction<TKey>, List<IGOAPActionTarget>>();
-
     #region AgentAction
     public bool InBeginRange(IGOAPAgentElements goapAgent, IGOAPActionTarget actionTarget)
     {
@@ -45,10 +43,10 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
 
     public IGOAPActionTarget FindActionTarget()
     {
-        if (_regisiteredActionTargets.TryGetValue(this, out var targetList))
+        if (AgentActionRegister.TryGetActionTargets(this, out var targetList))
         {
             // find an action Target for this action.
-            for (int i = 0; i < targetList.Count; i++)
+            for (int i = 0; i < targetList.Length; i++)
             {
                 // This is a dumb return the first element. Was meant to have some sorting based on distance or something.
                 return targetList[i];
@@ -103,9 +101,28 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
         return 1.0f;
     }
     #endregion // GOAPAction
+}
 
-    #region Register
-    public static void RegisterActionTarget(IGOAPActionTarget actionTarget, AgentAction<TKey> action)
+public static class AgentActionRegister
+{
+    static Dictionary<IGOAPAgentActionMethods, List<IGOAPActionTarget>> _regisiteredActionTargets = new Dictionary<IGOAPAgentActionMethods, List<IGOAPActionTarget>>();
+
+    public static bool TryGetActionTargets(IGOAPAgentActionMethods action, out IGOAPActionTarget[] actionTargets)
+    {
+        bool success = _regisiteredActionTargets.TryGetValue(action, out var actionTargetList);
+        if(success)
+        {
+            actionTargets = actionTargetList.ToArray();
+            return true;
+        }
+        else
+        {
+            actionTargets = null;
+            return false;
+        }
+    }
+
+    public static void RegisterActionTarget(IGOAPActionTarget actionTarget, IGOAPAgentActionMethods action)
     {
         if (_regisiteredActionTargets.TryGetValue(action, out var registerList))
         {
@@ -119,7 +136,7 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
         }
     }
 
-    public static void DeregisterActionTarget(IGOAPActionTarget actionTarget, AgentAction<TKey> action)
+    public static void DeregisterActionTarget(IGOAPActionTarget actionTarget, IGOAPAgentActionMethods action)
     {
         if (_regisiteredActionTargets.TryGetValue(action, out var registerList))
         {
@@ -127,7 +144,7 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
         }
     }
 
-    public static void RegisterActionTargets(IGOAPActionTarget actionTarget, List<AgentAction<TKey>> actions)
+    public static void RegisterActionTargets(IGOAPActionTarget actionTarget, List<IGOAPAgentActionMethods> actions)
     {
         for (int i = 0; i < actions.Count; i++)
         {
@@ -144,7 +161,7 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
         }
     }
 
-    public static void DeregisterActionTargets(IGOAPActionTarget actionTarget, List<AgentAction<TKey>> actions)
+    public static void DeregisterActionTargets(IGOAPActionTarget actionTarget, List<IGOAPAgentActionMethods> actions)
     {
         for (int i = 0; i < actions.Count; i++)
         {
@@ -154,5 +171,4 @@ public abstract class AgentAction<TKey> : ScriptableObject, IGOAPAction, IGOAPAg
             }
         }
     }
-    #endregion // Register
 }

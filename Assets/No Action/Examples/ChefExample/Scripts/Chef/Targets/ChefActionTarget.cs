@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
 {
     [SerializeField] List<ActionEffectPair> m_actionEffects;
-    Dictionary<AgentAction<ChefWorldStateEnum>, UnityEvent<IGOAPAgentElements>> m_actionEffectDictionary;
+    Dictionary<IGOAPAgentActionMethods, UnityEvent<IGOAPAgentElements>> m_actionEffectDictionary;
 
     //public IGOAPAction currentAction { get { return null; } } // Return null for now. But the action being performed on it would be cool.
 
@@ -21,12 +21,12 @@ public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
         [SerializeField][RequireInterface(typeof(IGOAPAction))] internal Object m_actionObject;
         [SerializeField] internal UnityEvent<IGOAPAgentElements> m_onPerformActionEvent;
 
-        public AgentAction<ChefWorldStateEnum> action { get { return m_actionObject as AgentAction<ChefWorldStateEnum>; } }
+        public IGOAPAgentActionMethods action { get { return m_actionObject as IGOAPAgentActionMethods; } }
     }
 
     private void Awake()
     {
-        m_actionEffectDictionary = new Dictionary<AgentAction<ChefWorldStateEnum>, UnityEvent<IGOAPAgentElements>>();
+        m_actionEffectDictionary = new Dictionary<IGOAPAgentActionMethods, UnityEvent<IGOAPAgentElements>>();
         foreach (var pair in m_actionEffects)
         {
             m_actionEffectDictionary.Add(pair.action, pair.m_onPerformActionEvent);
@@ -37,7 +37,7 @@ public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
     {
         foreach (var pair in m_actionEffects)
         {
-            AgentAction<ChefWorldStateEnum>.RegisterActionTarget(this, pair.action);
+            AgentActionRegister.RegisterActionTarget(this, pair.action);
         }
     }
 
@@ -45,7 +45,7 @@ public class ChefActionTarget : MonoBehaviour, IGOAPActionTarget
     {
         foreach (var pair in m_actionEffects)
         {
-            AgentAction<ChefWorldStateEnum>.DeregisterActionTarget(this, pair.action);
+            AgentActionRegister.DeregisterActionTarget(this, pair.action);
         }
     }
 

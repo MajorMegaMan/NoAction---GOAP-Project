@@ -2,11 +2,12 @@ using BBB.GOAP;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChefPlateAction : MonoBehaviour, IGOAPAction, IGOAPAgentActionMethods
 {
     [SerializeField] ChefActionTarget m_plate;
-
+    [SerializeField] UnityEvent<IGOAPAgentElements> m_onPerformActionEvent;
     [SerializeField] ChefAgentAction m_plateAction;
 
     public string actionName { get { return m_plateAction.actionName; } }
@@ -55,7 +56,7 @@ public class ChefPlateAction : MonoBehaviour, IGOAPAction, IGOAPAgentActionMetho
 
     public void PerformAgentEffects(IGOAPAgentElements goapAgent, IGOAPActionTarget actionTarget)
     {
-
+        m_onPerformActionEvent.Invoke(goapAgent);
     }
 
     public bool PlayBeginAnim(Animator animator)

@@ -1,5 +1,179 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1329806670526358093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7065510585068587472}
+  - component: {fileID: 8740576057210485313}
+  m_Layer: 0
+  m_Name: FoodActivator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7065510585068587472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329806670526358093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8029327031059488714}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8740576057210485313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329806670526358093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce992a65c4b9e7c4295f335d83192822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_burger: {fileID: 4977999368001146820}
+  m_fries: {fileID: 2275849157966595955}
+  m_drink: {fileID: 394039418320369947}
+  m_croissant: {fileID: 7696886082477797517}
+--- !u!1 &2187541362127564625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2552351393635034920}
+  - component: {fileID: 874967234502858786}
+  - component: {fileID: 2233786694670686790}
+  m_Layer: 0
+  m_Name: RandomRecipe (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2552351393635034920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187541362127564625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6299996, y: -0.5, z: 1.6299999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8029327031059488714}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &874967234502858786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187541362127564625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328b176e870e78540ac980834f090e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_plateState:
+    m_hasCustomEnum: 0
+    m_goapValueList:
+    - m_key: 1
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 2
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+    - m_key: 2
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 1
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+    - m_key: 3
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 1
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+    - m_key: 4
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 1
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+    m_editorValueToAdd:
+      m_key: 4
+      m_valueType: 1
+      m_floatValue: 0
+      m_intValue: 1
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+  m_plateActions:
+  - {fileID: 11400000, guid: 752437a7af538474e9b81c34e55297a3, type: 2}
+  - {fileID: 11400000, guid: 40e515280abeee14489b03bafa1973a2, type: 2}
+  - {fileID: 11400000, guid: 53afdec962866b74fa80c2cfa836fdf8, type: 2}
+  - {fileID: 11400000, guid: 97f402d833c03a24caa53138da28558e, type: 2}
+  m_maxDepth: 20
+  m_averageActionCount: 4
+  m_averageDepthCount: 7
+  m_goalName: Goal
+--- !u!114 &2233786694670686790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187541362127564625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bceee0e966a399747a94a999b7b953fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_targets:
+    m_hasCustomEnum: 0
+    m_goapValueList: []
+    m_editorValueToAdd:
+      m_key: 0
+      m_valueType: 0
+      m_floatValue: 0
+      m_intValue: 0
+      m_boolValue: 0
+      m_stringValue: 
+      m_objectValue: {fileID: 0}
+      m_hasCustomEnum: 0
+  m_bunMax: 3
+  m_lettuceMax: 3
+  m_tomatoMax: 3
+  m_beefMax: 3
 --- !u!1 &5064917220323154825
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6086713458225312721
 Transform:
   m_ObjectHideFlags: 0
@@ -322,6 +496,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_plate: {fileID: 8029327031059488713}
+  m_onPerformActionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8740576057210485313}
+        m_TargetAssemblyTypeName: FoodActivator, Assembly-CSharp
+        m_MethodName: ActivateCroissant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_plateAction: {fileID: 11400000, guid: 2e63aa0e0cd549543a74e58ce59b78a0, type: 2}
 --- !u!1 &8029327030239252361
 GameObject:
@@ -421,6 +610,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_plate: {fileID: 8029327031059488713}
+  m_onPerformActionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8740576057210485313}
+        m_TargetAssemblyTypeName: FoodActivator, Assembly-CSharp
+        m_MethodName: ActivateFries
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_plateAction: {fileID: 11400000, guid: aa687e289056a874480b0ed4a6e41104, type: 2}
 --- !u!1 &8029327031056354447
 GameObject:
@@ -467,6 +671,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_plate: {fileID: 8029327031059488713}
+  m_onPerformActionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8740576057210485313}
+        m_TargetAssemblyTypeName: FoodActivator, Assembly-CSharp
+        m_MethodName: ActivateBurger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_plateAction: {fileID: 11400000, guid: 13f83e23742606848baa43e5d18d88f5, type: 2}
 --- !u!1 &8029327031059488712
 GameObject:
@@ -505,6 +724,8 @@ Transform:
   - {fileID: 4977999368001375312}
   - {fileID: 2275849157966826487}
   - {fileID: 7696886082477620737}
+  - {fileID: 7065510585068587472}
+  - {fileID: 2552351393635034920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -522,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_actionEffects: []
   tablePosition: {fileID: 0}
-  m_recipe: {fileID: 6513146513495963175}
+  m_recipe: {fileID: 874967234502858786}
   m_plateState:
     m_hasCustomEnum: 0
     m_goapValueList:
@@ -700,6 +921,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_plate: {fileID: 8029327031059488713}
+  m_onPerformActionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8740576057210485313}
+        m_TargetAssemblyTypeName: FoodActivator, Assembly-CSharp
+        m_MethodName: ActivateDrink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_plateAction: {fileID: 11400000, guid: ab98ad7f9571f9d4889f2d9d977fc6fc, type: 2}
 --- !u!1001 &394039418320471339
 PrefabInstance:
@@ -764,6 +1000,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 394039418320471339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &394039418320369947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195632, guid: f5dae46d58bbe2c42b95113ad170ac2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 394039418320471339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2275849157966719955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -821,6 +1063,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347cbd6c4c794e84da446d818bfc540b, type: 3}
+--- !u!1 &2275849157966595955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 191648, guid: 347cbd6c4c794e84da446d818bfc540b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2275849157966719955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2275849157966826487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417828, guid: 347cbd6c4c794e84da446d818bfc540b,
@@ -884,6 +1132,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7592f8ed4321704469dca9f4d422eda4, type: 3}
+--- !u!1 &4977999368001146820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 133564, guid: 7592f8ed4321704469dca9f4d422eda4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4977999368001013368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4977999368001375312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428584, guid: 7592f8ed4321704469dca9f4d422eda4,
@@ -950,6 +1204,12 @@ PrefabInstance:
 --- !u!4 &7696886082477620737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468788, guid: 36ff5bf416a398e42b1c8605bde31deb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7696886082477938997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7696886082477797517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 158136, guid: 36ff5bf416a398e42b1c8605bde31deb,
     type: 3}
   m_PrefabInstance: {fileID: 7696886082477938997}
   m_PrefabAsset: {fileID: 0}

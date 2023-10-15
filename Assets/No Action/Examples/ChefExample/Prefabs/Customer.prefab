@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4492409776598161285}
   - component: {fileID: 4492409776598161287}
   - component: {fileID: 4492409776598161282}
+  - component: {fileID: 6828756184216318989}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -78,7 +79,19 @@ MonoBehaviour:
   m_eatSpeed: 0.1
   m_finishEatingEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6828756184216318989}
+        m_TargetAssemblyTypeName: CustomerFoodHider, Assembly-CSharp
+        m_MethodName: HideCurrentFood
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_leaveEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -87,7 +100,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   debug_float: 0
-  m_skinRandomiser: {fileID: 4509950556409737691}
   m_anim: {fileID: 5165488120241245164}
   m_targetWalkSpeed: 5
   m_movementCurve:
@@ -147,6 +159,18 @@ MonoBehaviour:
     m_target: {x: 0, y: 0, z: 0, w: 1}
     m_lerp: 0
     m_timeScale: 0
+--- !u!114 &6828756184216318989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492409776598161307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8279528a7a32ec49bbdabdf6a9a180c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5165488120559486845
 GameObject:
   m_ObjectHideFlags: 0

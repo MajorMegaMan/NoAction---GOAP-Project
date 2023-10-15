@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f614e4a21a3f749a3e0aef659fa5e2, type: 3}
-  m_Name: Plate Bun Action
+  m_Name: Pick Up Drink Action
   m_EditorClassIdentifier: 
-  m_actionName: Add Bun To Plate
+  m_actionName: Pick Up Drink
   m_conditions:
   - check: 2
     value:
       m_key: 0
       m_valueType: 1
       m_floatValue: 0
-      m_intValue: 1
+      m_intValue: 0
       m_boolValue: 0
       m_stringValue: 
       m_objectValue: {fileID: 0}
@@ -30,33 +30,13 @@ MonoBehaviour:
       m_key: 0
       m_valueType: 1
       m_floatValue: 0
-      m_intValue: 0
-      m_boolValue: 0
-      m_stringValue: 
-      m_objectValue: {fileID: 0}
-      m_hasCustomEnum: 0
-  - effect: 0
-    value:
-      m_key: 1
-      m_valueType: 1
-      m_floatValue: 0
-      m_intValue: 1
-      m_boolValue: 0
-      m_stringValue: 
-      m_objectValue: {fileID: 0}
-      m_hasCustomEnum: 0
-  - effect: 0
-    value:
-      m_key: 5
-      m_valueType: 1
-      m_floatValue: 0
-      m_intValue: 1
+      m_intValue: 3
       m_boolValue: 0
       m_stringValue: 
       m_objectValue: {fileID: 0}
       m_hasCustomEnum: 0
   m_agentData:
-    m_beginRange: 1
+    m_beginRange: 1.5
     m_beginRangeError: 0.01
     m_completeTime: 1
     m_effectTime: 0.5

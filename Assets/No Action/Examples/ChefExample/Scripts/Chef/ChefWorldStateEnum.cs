@@ -6,10 +6,10 @@ public enum ChefWorldStateEnum
 {
     Chef_HoldItem,
 
-    Plate_BunCount,
-    Plate_LettuceCount,
-    Plate_TomatoCount,
-    Plate_BeefCount,
+    Plate_BurgerCount, // burger
+    Plate_FriesCount, // fries
+    Plate_DrinkCount, // drink
+    Plate_CrossCount, // croissant
     Plate_TotalCount,
 
     Chef_HoldRef,

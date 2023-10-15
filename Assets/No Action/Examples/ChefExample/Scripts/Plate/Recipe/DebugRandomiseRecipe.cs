@@ -22,17 +22,17 @@ public class DebugRandomiseRecipe : MonoBehaviour
 
     public void Randomise()
     {
-        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BunCount, Random.Range(0, m_bunMax));
-        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_LettuceCount, Random.Range(0, m_lettuceMax));
-        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_TomatoCount, Random.Range(0, m_tomatoMax));
-        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BeefCount, Random.Range(0, m_beefMax));
+        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BurgerCount, Random.Range(0, m_bunMax));
+        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_FriesCount, Random.Range(0, m_lettuceMax));
+        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_DrinkCount, Random.Range(0, m_tomatoMax));
+        m_recipe.plateRecipe.SetValue<int>((int)ChefWorldStateEnum.Plate_CrossCount, Random.Range(0, m_beefMax));
     }
 
     public static void RandomiseRecipe(BBB.GOAP.GOAPWorldState recipe, int maxCounts)
     {
-        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BunCount, Random.Range(0, maxCounts));
-        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_LettuceCount, Random.Range(0, maxCounts));
-        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_TomatoCount, Random.Range(0, maxCounts));
-        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BeefCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_BurgerCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_FriesCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_DrinkCount, Random.Range(0, maxCounts));
+        recipe.SetValue<int>((int)ChefWorldStateEnum.Plate_CrossCount, Random.Range(0, maxCounts));
     }
 }

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f614e4a21a3f749a3e0aef659fa5e2, type: 3}
-  m_Name: Plate Tomato Action
+  m_Name: Plate Add Burger Action
   m_EditorClassIdentifier: 
-  m_actionName: Add Tomato To Plate
+  m_actionName: Add Burger To Plate
   m_conditions:
   - check: 2
     value:
       m_key: 0
       m_valueType: 1
       m_floatValue: 0
-      m_intValue: 3
+      m_intValue: 1
       m_boolValue: 0
       m_stringValue: 
       m_objectValue: {fileID: 0}
@@ -37,7 +37,7 @@ MonoBehaviour:
       m_hasCustomEnum: 0
   - effect: 0
     value:
-      m_key: 3
+      m_key: 1
       m_valueType: 1
       m_floatValue: 0
       m_intValue: 1

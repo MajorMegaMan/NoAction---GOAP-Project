@@ -17,9 +17,7 @@ public class RecipePlateAction : ScriptableObject, IGOAPAction, IGOAPGoal
 
     GOAPWorldState m_agentCopystate = new GOAPWorldState();
 
-    [SerializeField] string m_goalName = "Goal";
-
-    public string goalName { get { return m_goalName; } }
+    public string goalName { get { return m_actionData.actionName; } }
 
     #region GOAPAction
     public bool CheckCondition(GOAPWorldState worldState)

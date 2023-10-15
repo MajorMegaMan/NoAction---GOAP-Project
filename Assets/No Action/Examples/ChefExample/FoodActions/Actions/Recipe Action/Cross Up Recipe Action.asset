@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78e6be8f52e62f546a203eddd900bb4b, type: 3}
-  m_Name: Lettuce Up Recipe Action
+  m_Name: Cross Up Recipe Action
   m_EditorClassIdentifier: 
   m_actionData:
-    m_actionName: Lettuce Up
+    m_actionName: Croissant Up
     m_conditions:
     - check: 1
       value:
-        m_key: 2
+        m_key: 4
         m_valueType: 1
         m_floatValue: 0
         m_intValue: 3
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_effects:
     - effect: 0
       value:
-        m_key: 2
+        m_key: 4
         m_valueType: 1
         m_floatValue: 0
         m_intValue: 1
@@ -46,4 +46,4 @@ MonoBehaviour:
         m_stringValue: 
         m_objectValue: {fileID: 0}
         m_hasCustomEnum: 0
-  m_goalName: Lettuce Up
+  m_goalName: Beef Up

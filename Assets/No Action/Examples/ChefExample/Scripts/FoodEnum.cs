@@ -5,9 +5,9 @@ using UnityEngine;
 public enum FoodEnum
 {
     None,
-    Buns,
-    Lettuce,
-    Tomato,
-    Beef,
+    Burger,
+    Fries,
+    Drink,
+    Croissant,
     Plate
 }

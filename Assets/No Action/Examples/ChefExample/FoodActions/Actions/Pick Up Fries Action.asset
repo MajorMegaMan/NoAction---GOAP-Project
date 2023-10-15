@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f614e4a21a3f749a3e0aef659fa5e2, type: 3}
-  m_Name: Tomato Action
+  m_Name: Pick Up Fries Action
   m_EditorClassIdentifier: 
-  m_actionName: Pick Up Tomato
+  m_actionName: Pick Up Fries
   m_conditions:
   - check: 2
     value:
@@ -30,7 +30,7 @@ MonoBehaviour:
       m_key: 0
       m_valueType: 1
       m_floatValue: 0
-      m_intValue: 3
+      m_intValue: 2
       m_boolValue: 0
       m_stringValue: 
       m_objectValue: {fileID: 0}

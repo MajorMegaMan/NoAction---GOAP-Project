@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class ChefAgent : MonoBehaviour, IGOAPAgentElements
 {
-    //[SerializeField] ChefGlobalWorldState m_globalWorldState;
     [SerializeField] SerialisedGOAPWorldState<ChefWorldStateEnum> m_agentWorldState;
     [SerializeField] AgentMoveMachine<ChefAgent, ChefWorldStateEnum> m_movementMachine;
 
@@ -17,7 +16,7 @@ public class ChefAgent : MonoBehaviour, IGOAPAgentElements
 
     public IGOAPAction currentAction { get { return m_movementMachine.currentAction; } }
 
-    [SerializeField] PlateState m_targetPlate;
+    PlateState m_targetPlate;
     [SerializeField][RequireInterface(typeof(IGOAPAgentActionMethods))] List<Object> m_actionObjects = new List<Object>();
     HashSet<IGOAPAction> m_actions;
     //Queue<IGOAPAction> m_actionPlan;

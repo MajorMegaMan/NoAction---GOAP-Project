@@ -31,10 +31,10 @@ public class RecipePlanningExplorerWindow : BasePlanningExplorerWindow<RecipePla
     protected override GOAPWorldState InitialiseWindowWorldState()
     {
         GOAPWorldState windowWorldState = new GOAPWorldState();
-        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_BunCount, 0);
-        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_LettuceCount, 0);
-        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_TomatoCount, 0);
-        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_BeefCount, 0);
+        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_BurgerCount, 0);
+        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_FriesCount, 0);
+        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_DrinkCount, 0);
+        windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_CrossCount, 0);
         windowWorldState.AddValue((int)ChefWorldStateEnum.Plate_TotalCount, 0);
         return windowWorldState;
     }

@@ -152,7 +152,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  m_targetPlate: {fileID: 0}
   m_actionObjects:
   - {fileID: 11400000, guid: 5f7d5c84c9b03454697f35364e1c31fb, type: 2}
   - {fileID: 11400000, guid: a6cd33ed8cf12784c823dc0cb259123e, type: 2}
@@ -190,7 +189,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!1 &7480577824957341517
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +310,53 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7480577824733403536}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &454769480652547686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480577824733295270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b796921b2f73a42b094f70f76a04af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_targetTransform: {fileID: 7480577824733079952}
+  m_randomSizeModRange: {x: 0.1, y: 0.4, z: 0.1}
+  m_curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1879075243791735517
 MonoBehaviour:
   m_ObjectHideFlags: 0

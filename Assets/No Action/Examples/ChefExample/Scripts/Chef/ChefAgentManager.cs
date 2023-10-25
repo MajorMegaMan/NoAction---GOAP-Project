@@ -47,8 +47,6 @@ public class ChefAgentManager : MonoBehaviour
     public int m_averageActionCount = 8;
     public int m_averageDepthCount = 5;
 
-    [SerializeField] Vector3 m_randomSizeModRange = Vector3.one * 0.1f;
-
     private void Awake()
     {
         m_onAwakeEvent.Invoke();
@@ -332,14 +330,6 @@ public class ChefAgentManager : MonoBehaviour
             agent.transform.position = m_spawnPoint.position;
         }
         PushReadyAgent(agent);
-
-        Vector3 scale = agent.movementMachine.animator.transform.localScale;
-
-        scale.x += Random.Range(-m_randomSizeModRange.x, m_randomSizeModRange.x);
-        scale.y += Random.Range(-m_randomSizeModRange.y, m_randomSizeModRange.y);
-        scale.z += Random.Range(-m_randomSizeModRange.z, m_randomSizeModRange.z);
-
-        agent.movementMachine.animator.transform.localScale = scale;
 
         return agent;
     }

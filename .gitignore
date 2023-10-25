@@ -63,3 +63,5 @@ crashlytics-build.properties
 
 # My Inculded ignores
 /UserSettings/
+/Assets/Ignore/
+/Assets/Ignore.meta
